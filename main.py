@@ -6,6 +6,7 @@ from build_cache import cache
 from compute_perp import Evaluator as PPLEvaluator
 from compute_sc import SCEvaluator
 from compute_rpc import RPCEvaluator
+from compute_pc import PCEvaluator
 
 REPOID = {
     "MATH": "WNJXYK/MATH-Reasoning-Paths",
@@ -17,14 +18,15 @@ REPOID = {
 EVALUATOR_MAP = {
     "PPL": PPLEvaluator,
     "SC": SCEvaluator,
-    "RPC": RPCEvaluator
+    "RPC": RPCEvaluator,
+    "PC": PCEvaluator
 }
 
 args = argparse.ArgumentParser()
 args.add_argument("--dataset", type=str, choices=["MATH", "MathOdyssey", "AIME", "OlympiadBench"], default="MathOdyssey")
 args.add_argument("--model", type=str, choices=["Deepseek-Math-RL-7B", "InternLM2-Math-Plus-1.8B", "InternLM2-Math-Plus-7B"], default="InternLM2-Math-Plus-7B")
 args.add_argument("--K", type=int, default=128)
-args.add_argument("--method", type=str, default="PPL", choices=["PPL", "SC", "RPC"])
+args.add_argument("--method", type=str, default="PPL", choices=["PPL", "SC", "RPC", "PC"])
 args = args.parse_args()
 
 repo_id = REPOID[args.dataset]
