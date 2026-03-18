@@ -28,9 +28,13 @@ def weibull_mean(k, lam):
 def mixture_pdf(x, w1, k1, lam1, k2, lam2):
     return w1 * weibull_pdf(x, k1, lam1) + (1 - w1) * weibull_pdf(x, k2, lam2)
 
+PDF_EPS = 1e-300  # avoid log(0) in neg_log_likelihood (Zero Init can yield ~0 pdf)
+
+
 def neg_log_likelihood(params, data):
     w1, k1, lam1, k2, lam2 = params
     pdf_vals = mixture_pdf(data, w1, k1, lam1, k2, lam2)
+    pdf_vals = np.clip(pdf_vals, PDF_EPS, None)
     return -np.sum(np.log(pdf_vals))
 
 def calculate_membership_probabilities(data, w1, k1, lam1, k2, lam2):
@@ -42,20 +46,44 @@ def calculate_membership_probabilities(data, w1, k1, lam1, k2, lam2):
 
 ### Perplexity Consistency Module: Bridging the probability with self-consistency ####
 
-def wpc_evaluator(predicts, completions, perplexities, answer, equal_func, check_equal):
-    m = len(predicts)
-    dsu = DSU(m)
-    probas = [np.exp(perplexities[i]) for i in range(m)]
-    mean_proba = np.mean(probas)
+def _get_initial_guess(init_method):
+    """Fixed Init: [0.5, 1.0, 1.0, 1.5, 2.0]. Zero Init: small k, lam."""
+    if init_method == "fixed":
+        return [0.5, 1.0, 1.0, 1.5, 2.0]
+    elif init_method == "zero":
+        return [0.5, 0.01, 0.01, 0.01, 0.01]
+    else:
+        return [0.5, 1.0, 1.0, 1.5, 2.0]
 
-    # Model probability with Weibull distribution
-    initial_guess = [0.5, 1.0, 1.0, 1.5, 2.0]
-    result = minimize(
-        neg_log_likelihood,
-        initial_guess,
-        args=(probas,),
-        bounds=[(0.2, 0.8), (0.01, None), (0.01, None), (0.01, None), (0.01, None)],
-    )
+
+def make_wpc_evaluator(init_method="fixed", w_lower=0.2, w_upper=0.8):
+    """Return an evaluator that uses the given init and w bounds (for Table 9 / D.6)."""
+
+    def wpc_evaluator(predicts, completions, perplexities, answer, equal_func, check_equal):
+        m = len(predicts)
+        dsu = DSU(m)
+        probas = [np.exp(perplexities[i]) for i in range(m)]
+        mean_proba = np.mean(probas)
+
+        initial_guess = _get_initial_guess(init_method)
+        result = minimize(
+            neg_log_likelihood,
+            initial_guess,
+            args=(probas,),
+            bounds=[(w_lower, w_upper), (0.01, None), (0.01, None), (0.01, None), (0.01, None)],
+        )
+        return _wpc_evaluator_core(predicts, completions, perplexities, answer, equal_func, check_equal, dsu, probas, mean_proba, result)
+
+    return wpc_evaluator
+
+
+# Default evaluator (Fixed Init, w in [0.2, 0.8]) for backward compatibility
+wpc_evaluator = make_wpc_evaluator("fixed", 0.2, 0.8)
+
+
+def _wpc_evaluator_core(predicts, completions, perplexities, answer, equal_func, check_equal, dsu, probas, mean_proba, result):
+    """Shared core after Weibull fit (used by both wpc_evaluator and make_wpc_evaluator)."""
+    m = len(predicts)
     w1, k1, lam1, k2, lam2 = result.x
     if weibull_mean(k1, lam1) < weibull_mean(k2, lam2):
         k1, lam1, k2, lam2 = k2, lam2, k1, lam1
@@ -119,18 +147,25 @@ def wpc_evaluator(predicts, completions, perplexities, answer, equal_func, check
     return correct, answers
 
 class RPCEvaluator(Evaluator):
-    def __init__(self,):
+    def __init__(self, init_method="fixed", w_bounds=(0.2, 0.8)):
         self.name = "RPC"
+        self.init_method = init_method
+        self.w_bounds = w_bounds
+        # Do not store closure on self: multiprocessing cannot pickle it.
+        # Create evaluator inside worker() instead.
 
     def worker(self, args):
         json_file, cache_file, K, seed = args
+        evaluator_fn = make_wpc_evaluator(
+            self.init_method, self.w_bounds[0], self.w_bounds[1]
+        )
         acc, maximum, average, max_bins, avg_bins = self.process(
-            json_file=json_file, 
+            json_file=json_file,
             cache_file=cache_file,
-            equal_func=numberic_compare, 
-            evaluator=wpc_evaluator,
-            K=K, 
+            equal_func=numberic_compare,
+            evaluator=evaluator_fn,
+            K=K,
             seed=seed
         )
-        return acc, maximum, average
+        return acc, maximum, average, max_bins, avg_bins
 

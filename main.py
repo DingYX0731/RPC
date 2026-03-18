@@ -27,6 +27,12 @@ args.add_argument("--dataset", type=str, choices=["MATH", "MathOdyssey", "AIME",
 args.add_argument("--model", type=str, choices=["Deepseek-Math-RL-7B", "InternLM2-Math-Plus-1.8B", "InternLM2-Math-Plus-7B"], default="InternLM2-Math-Plus-7B")
 args.add_argument("--K", type=int, default=128)
 args.add_argument("--method", type=str, default="PPL", choices=["PPL", "SC", "RPC", "PC"])
+args.add_argument("--confidence-accuracy", action="store_true", help="Write reliability (confidence vs accuracy) bins to results.txt")
+# RPC hyper-parameter robustness (Table 9 / D.6)
+args.add_argument("--init-method", type=str, choices=["fixed", "zero"], default="fixed", help="RPC Weibull init: fixed or zero")
+args.add_argument("--w-lower", type=float, default=0.2, help="RPC w1 lower bound")
+args.add_argument("--w-upper", type=float, default=0.8, help="RPC w1 upper bound")
+args.add_argument("--repeats", type=int, default=10, help="Number of random seeds (for accuracy mean ± std)")
 args = args.parse_args()
 
 repo_id = REPOID[args.dataset]
@@ -48,10 +54,36 @@ with open(cache_path, 'r', encoding='utf-8') as f:
     cache_file = json.load(f)
 
 # Run!
-results = EVALUATOR_MAP[args.method]().solve(json_file=json_file, cache_file=cache_file, K=args.K)
+evaluator_cls = EVALUATOR_MAP[args.method]
+evaluator = (
+    evaluator_cls(init_method=args.init_method, w_bounds=(args.w_lower, args.w_upper))
+    if args.method == "RPC"
+    else evaluator_cls()
+)
+results = evaluator.solve(
+    json_file=json_file,
+    cache_file=cache_file,
+    K=args.K,
+    repeats=args.repeats,
+    output_reliability=args.confidence_accuracy
+)
 
 # Report results
-result_str = f"{args.method} {args.dataset} {args.model} {args.K} {results}"
+results_for_line = {k: v for k, v in results.items() if k != "reliability"}
+result_str = f"{args.method} {args.dataset} {args.model} {args.K} {results_for_line}"
 with open("results.txt", "a") as f:
     f.write(result_str + "\n")
+    if args.confidence_accuracy and "reliability" in results:
+        f.write("\nReliability (confidence vs accuracy, 10 bins):\n")
+        for row in results["reliability"]:
+            f.write(
+                f"  Bin [{row['bin_low']:.1f}, {row['bin_high']:.1f}): "
+                f"avg_confidence={row['avg_confidence']:.4f}, "
+                f"accuracy%={row['accuracy_pct']:.2f}, "
+                f"gap%={row['gap_pct']:.2f}, "
+                f"count={row['count']:.4f}\n"
+            )
+        f.write("\n")
 print(result_str)
+if args.confidence_accuracy and "reliability" in results:
+    print("Reliability bins written to results.txt")

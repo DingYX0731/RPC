@@ -1,0 +1,232 @@
+SC MathOdyssey InternLM2-Math-Plus-7B 128 {'Accuracy': '28.25 ± 0.60', 'ECE': '12.23 ± 0.54'}
+SC MathOdyssey InternLM2-Math-Plus-7B 128 {'Accuracy': '28.25 ± 0.60', 'ECE': '12.23 ± 0.54'}
+
+Reliability (confidence vs accuracy, 10 bins):
+  Bin [0.0, 0.1): avg_confidence=0.0570, accuracy%=5.00, gap%=0.70, count=20.0000
+  Bin [0.1, 0.2): avg_confidence=0.1481, accuracy%=3.92, gap%=10.89, count=51.0000
+  Bin [0.2, 0.3): avg_confidence=0.2511, accuracy%=16.95, gap%=8.16, count=59.0000
+  Bin [0.3, 0.4): avg_confidence=0.3514, accuracy%=19.48, gap%=15.66, count=77.0000
+  Bin [0.4, 0.5): avg_confidence=0.4509, accuracy%=35.48, gap%=9.60, count=62.0000
+  Bin [0.5, 0.6): avg_confidence=0.5589, accuracy%=44.44, gap%=11.44, count=45.0000
+  Bin [0.6, 0.7): avg_confidence=0.6446, accuracy%=56.10, gap%=8.37, count=41.0000
+  Bin [0.7, 0.8): avg_confidence=0.7311, accuracy%=57.89, gap%=15.21, count=19.0000
+  Bin [0.8, 0.9): avg_confidence=0.8549, accuracy%=57.14, gap%=28.35, count=7.0000
+  Bin [0.9, 1.0): avg_confidence=0.9707, accuracy%=75.00, gap%=22.07, count=8.0000
+
+RPC MathOdyssey InternLM2-Math-Plus-7B 128 {'Accuracy': '28.53 ± 0.57', 'ECE': '11.77 ± 0.55'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 128 {'Accuracy': '28.53 ± 0.57', 'ECE': '11.77 ± 0.55'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 128 {'Accuracy': '29.05 ± 0.00', 'ECE': '11.34 ± 0.00'}
+
+
+
+
+
+
+
+
+Figure 2 (MATH)
+PPL MATH InternLM2-Math-Plus-7B 1 {'Accuracy': '41.69 ± 0.42', 'ECE': '48.61 ± 0.43'}
+PPL MATH InternLM2-Math-Plus-7B 2 {'Accuracy': '43.93 ± 0.39', 'ECE': '48.40 ± 0.38'}
+PPL MATH InternLM2-Math-Plus-7B 4 {'Accuracy': '45.57 ± 0.38', 'ECE': '48.08 ± 0.39'}
+PPL MATH InternLM2-Math-Plus-7B 8 {'Accuracy': '46.49 ± 0.42', 'ECE': '48.03 ± 0.43'}
+PPL MATH InternLM2-Math-Plus-7B 16 {'Accuracy': '47.14 ± 0.22', 'ECE': '47.99 ± 0.22'}
+PPL MATH InternLM2-Math-Plus-7B 32 {'Accuracy': '47.09 ± 0.26', 'ECE': '48.51 ± 0.26'}
+PPL MATH InternLM2-Math-Plus-7B 40 {'Accuracy': '46.95 ± 0.28', 'ECE': '48.78 ± 0.28'}
+PPL MATH InternLM2-Math-Plus-7B 48 {'Accuracy': '46.96 ± 0.26', 'ECE': '48.88 ± 0.26'}
+PPL MATH InternLM2-Math-Plus-7B 64 {'Accuracy': '46.99 ± 0.20', 'ECE': '48.99 ± 0.19'}
+SC MATH InternLM2-Math-Plus-7B 1 {'Accuracy': '41.69 ± 0.42', 'ECE': '58.31 ± 0.42'}
+SC MATH InternLM2-Math-Plus-7B 2 {'Accuracy': '41.73 ± 0.22', 'ECE': '31.07 ± 0.26'}
+SC MATH InternLM2-Math-Plus-7B 4 {'Accuracy': '45.92 ± 0.26', 'ECE': '18.54 ± 0.27'}
+SC MATH InternLM2-Math-Plus-7B 8 {'Accuracy': '48.46 ± 0.21', 'ECE': '12.26 ± 0.30'}
+SC MATH InternLM2-Math-Plus-7B 16 {'Accuracy': '49.76 ± 0.16', 'ECE': '9.05 ± 0.18'}
+SC MATH InternLM2-Math-Plus-7B 32 {'Accuracy': '50.37 ± 0.25', 'ECE': '7.39 ± 0.27'}
+SC MATH InternLM2-Math-Plus-7B 40 {'Accuracy': '50.46 ± 0.11', 'ECE': '7.10 ± 0.15'}
+SC MATH InternLM2-Math-Plus-7B 48 {'Accuracy': '50.51 ± 0.17', 'ECE': '6.93 ± 0.19'}
+SC MATH InternLM2-Math-Plus-7B 64 {'Accuracy': '50.57 ± 0.17', 'ECE': '6.71 ± 0.18'}
+PC MATH InternLM2-Math-Plus-7B 1 {'Accuracy': '41.69 ± 0.42', 'ECE': '58.31 ± 0.42'}
+PC MATH InternLM2-Math-Plus-7B 2 {'Accuracy': '43.93 ± 0.39', 'ECE': '29.66 ± 0.48'}
+PC MATH InternLM2-Math-Plus-7B 4 {'Accuracy': '47.21 ± 0.37', 'ECE': '17.62 ± 0.32'}
+PC MATH InternLM2-Math-Plus-7B 8 {'Accuracy': '49.09 ± 0.18', 'ECE': '11.79 ± 0.29'}
+PC MATH InternLM2-Math-Plus-7B 16 {'Accuracy': '50.20 ± 0.16', 'ECE': '8.71 ± 0.20'}
+PC MATH InternLM2-Math-Plus-7B 32 {'Accuracy': '50.65 ± 0.29', 'ECE': '7.19 ± 0.30'}
+PC MATH InternLM2-Math-Plus-7B 40 {'Accuracy': '50.68 ± 0.11', 'ECE': '6.94 ± 0.13'}
+PC MATH InternLM2-Math-Plus-7B 48 {'Accuracy': '50.74 ± 0.16', 'ECE': '6.76 ± 0.17'}
+PC MATH InternLM2-Math-Plus-7B 64 {'Accuracy': '50.84 ± 0.20', 'ECE': '6.50 ± 0.21'}
+RPC MATH InternLM2-Math-Plus-7B 1 {'Accuracy': '41.69 ± 0.42', 'ECE': '58.31 ± 0.42'}
+RPC MATH InternLM2-Math-Plus-7B 2 {'Accuracy': '43.93 ± 0.39', 'ECE': '32.97 ± 0.47'}
+RPC MATH InternLM2-Math-Plus-7B 4 {'Accuracy': '47.03 ± 0.35', 'ECE': '19.10 ± 0.33'}
+RPC MATH InternLM2-Math-Plus-7B 8 {'Accuracy': '49.13 ± 0.17', 'ECE': '12.01 ± 0.28'}
+RPC MATH InternLM2-Math-Plus-7B 16 {'Accuracy': '50.23 ± 0.14', 'ECE': '8.96 ± 0.19'}
+RPC MATH InternLM2-Math-Plus-7B 32 {'Accuracy': '50.95 ± 0.25', 'ECE': '7.30 ± 0.28'}
+RPC MATH InternLM2-Math-Plus-7B 40 {'Accuracy': '51.18 ± 0.14', 'ECE': '6.97 ± 0.16'}
+RPC MATH InternLM2-Math-Plus-7B 48 {'Accuracy': '51.38 ± 0.15', 'ECE': '6.78 ± 0.19'}
+RPC MATH InternLM2-Math-Plus-7B 64 {'Accuracy': '51.96 ± 0.15', 'ECE': '6.44 ± 0.19'}
+
+
+
+
+Figure 2 (MathOdyssey)
+PPL MathOdyssey InternLM2-Math-Plus-7B 1 {'Accuracy': '20.57 ± 1.13', 'ECE': '65.96 ± 1.08'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 2 {'Accuracy': '23.42 ± 1.17', 'ECE': '65.78 ± 1.18'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 4 {'Accuracy': '25.40 ± 0.90', 'ECE': '65.72 ± 0.96'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 8 {'Accuracy': '27.48 ± 0.79', 'ECE': '64.89 ± 0.79'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 16 {'Accuracy': '27.92 ± 1.30', 'ECE': '65.35 ± 1.28'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 32 {'Accuracy': '28.30 ± 0.77', 'ECE': '65.68 ± 0.76'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 40 {'Accuracy': '28.64 ± 1.22', 'ECE': '65.54 ± 1.21'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 48 {'Accuracy': '28.92 ± 1.51', 'ECE': '65.40 ± 1.52'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 64 {'Accuracy': '28.51 ± 1.39', 'ECE': '66.04 ± 1.39'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 80 {'Accuracy': '28.10 ± 0.93', 'ECE': '66.62 ± 0.95'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 96 {'Accuracy': '28.20 ± 0.98', 'ECE': '66.65 ± 0.98'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 112 {'Accuracy': '27.51 ± 0.77', 'ECE': '67.46 ± 0.78'}
+PPL MathOdyssey InternLM2-Math-Plus-7B 128 {'Accuracy': '27.35 ± 1.22', 'ECE': '67.70 ± 1.22'}
+SC MathOdyssey InternLM2-Math-Plus-7B 1 {'Accuracy': '20.57 ± 1.13', 'ECE': '79.43 ± 1.13'}
+SC MathOdyssey InternLM2-Math-Plus-7B 2 {'Accuracy': '20.22 ± 0.65', 'ECE': '43.29 ± 0.55'}
+SC MathOdyssey InternLM2-Math-Plus-7B 4 {'Accuracy': '23.75 ± 1.02', 'ECE': '27.78 ± 0.99'}
+SC MathOdyssey InternLM2-Math-Plus-7B 8 {'Accuracy': '25.60 ± 0.80', 'ECE': '20.57 ± 1.01'}
+SC MathOdyssey InternLM2-Math-Plus-7B 16 {'Accuracy': '26.72 ± 1.06', 'ECE': '16.62 ± 0.91'}
+SC MathOdyssey InternLM2-Math-Plus-7B 32 {'Accuracy': '27.28 ± 1.00', 'ECE': '14.44 ± 0.85'}
+SC MathOdyssey InternLM2-Math-Plus-7B 40 {'Accuracy': '27.58 ± 0.80', 'ECE': '13.78 ± 0.77'}
+SC MathOdyssey InternLM2-Math-Plus-7B 48 {'Accuracy': '27.80 ± 0.71', 'ECE': '13.37 ± 0.69'}
+SC MathOdyssey InternLM2-Math-Plus-7B 64 {'Accuracy': '27.62 ± 0.70', 'ECE': '13.26 ± 0.76'}
+SC MathOdyssey InternLM2-Math-Plus-7B 80 {'Accuracy': '27.76 ± 0.38', 'ECE': '12.88 ± 0.38'}
+SC MathOdyssey InternLM2-Math-Plus-7B 96 {'Accuracy': '27.99 ± 0.51', 'ECE': '12.59 ± 0.52'}
+SC MathOdyssey InternLM2-Math-Plus-7B 112 {'Accuracy': '28.32 ± 0.55', 'ECE': '12.19 ± 0.54'}
+SC MathOdyssey InternLM2-Math-Plus-7B 128 {'Accuracy': '28.25 ± 0.60', 'ECE': '12.23 ± 0.54'}
+PC MathOdyssey InternLM2-Math-Plus-7B 1 {'Accuracy': '20.57 ± 1.13', 'ECE': '79.43 ± 1.13'}
+PC MathOdyssey InternLM2-Math-Plus-7B 2 {'Accuracy': '23.42 ± 1.17', 'ECE': '41.35 ± 1.04'}
+PC MathOdyssey InternLM2-Math-Plus-7B 4 {'Accuracy': '25.35 ± 1.27', 'ECE': '26.68 ± 1.15'}
+PC MathOdyssey InternLM2-Math-Plus-7B 8 {'Accuracy': '26.97 ± 1.02', 'ECE': '19.29 ± 1.24'}
+PC MathOdyssey InternLM2-Math-Plus-7B 16 {'Accuracy': '27.48 ± 0.89', 'ECE': '15.72 ± 0.86'}
+PC MathOdyssey InternLM2-Math-Plus-7B 32 {'Accuracy': '27.84 ± 1.35', 'ECE': '13.68 ± 1.11'}
+PC MathOdyssey InternLM2-Math-Plus-7B 40 {'Accuracy': '28.23 ± 0.98', 'ECE': '12.96 ± 0.94'}
+PC MathOdyssey InternLM2-Math-Plus-7B 48 {'Accuracy': '28.23 ± 0.77', 'ECE': '12.67 ± 0.70'}
+PC MathOdyssey InternLM2-Math-Plus-7B 64 {'Accuracy': '28.10 ± 0.64', 'ECE': '12.40 ± 0.59'}
+PC MathOdyssey InternLM2-Math-Plus-7B 80 {'Accuracy': '28.17 ± 0.43', 'ECE': '12.14 ± 0.46'}
+PC MathOdyssey InternLM2-Math-Plus-7B 96 {'Accuracy': '28.33 ± 0.60', 'ECE': '11.97 ± 0.47'}
+PC MathOdyssey InternLM2-Math-Plus-7B 112 {'Accuracy': '28.66 ± 0.62', 'ECE': '11.46 ± 0.63'}
+PC MathOdyssey InternLM2-Math-Plus-7B 128 {'Accuracy': '28.82 ± 0.71', 'ECE': '11.26 ± 0.68'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 1 {'Accuracy': '20.57 ± 1.13', 'ECE': '79.43 ± 1.13'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 2 {'Accuracy': '23.42 ± 1.17', 'ECE': '46.85 ± 0.98'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 4 {'Accuracy': '25.22 ± 1.51', 'ECE': '29.45 ± 1.41'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 8 {'Accuracy': '27.28 ± 1.03', 'ECE': '19.65 ± 1.22'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 16 {'Accuracy': '28.07 ± 1.03', 'ECE': '15.62 ± 1.00'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 32 {'Accuracy': '29.07 ± 1.57', 'ECE': '12.79 ± 1.43'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 40 {'Accuracy': '29.61 ± 1.41', 'ECE': '11.61 ± 1.25'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 48 {'Accuracy': '29.92 ± 0.98', 'ECE': '11.21 ± 0.83'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 64 {'Accuracy': '30.98 ± 1.28', 'ECE': '10.04 ± 1.21'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 80 {'Accuracy': '31.52 ± 0.72', 'ECE': '9.66 ± 1.08'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 96 {'Accuracy': '31.26 ± 0.73', 'ECE': '10.02 ± 0.85'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 112 {'Accuracy': '31.67 ± 0.68', 'ECE': '10.16 ± 0.67'}
+RPC MathOdyssey InternLM2-Math-Plus-7B 128 {'Accuracy': '31.83 ± 0.73', 'ECE': '9.70 ± 0.76'}
+
+
+
+
+Figure 2 (OlympiadBench)
+PPL OlympiadBench InternLM2-Math-Plus-7B 1 {'Accuracy': '7.24 ± 0.37', 'ECE': '77.11 ± 0.38'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 2 {'Accuracy': '7.28 ± 0.36', 'ECE': '80.10 ± 0.39'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 4 {'Accuracy': '7.83 ± 0.31', 'ECE': '81.67 ± 0.34'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 8 {'Accuracy': '7.85 ± 0.36', 'ECE': '83.08 ± 0.35'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 16 {'Accuracy': '7.94 ± 0.49', 'ECE': '84.04 ± 0.49'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 32 {'Accuracy': '7.96 ± 0.30', 'ECE': '84.84 ± 0.31'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 40 {'Accuracy': '7.81 ± 0.30', 'ECE': '85.24 ± 0.31'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 48 {'Accuracy': '7.68 ± 0.21', 'ECE': '85.56 ± 0.21'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 64 {'Accuracy': '7.50 ± 0.51', 'ECE': '86.04 ± 0.50'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 80 {'Accuracy': '7.31 ± 0.47', 'ECE': '86.44 ± 0.45'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 96 {'Accuracy': '7.28 ± 0.36', 'ECE': '86.64 ± 0.35'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 112 {'Accuracy': '7.25 ± 0.38', 'ECE': '86.81 ± 0.37'}
+PPL OlympiadBench InternLM2-Math-Plus-7B 128 {'Accuracy': '7.27 ± 0.36', 'ECE': '86.90 ± 0.35'}
+PC OlympiadBench InternLM2-Math-Plus-7B 1 {'Accuracy': '7.24 ± 0.37', 'ECE': '92.76 ± 0.37'}
+PC OlympiadBench InternLM2-Math-Plus-7B 2 {'Accuracy': '7.28 ± 0.36', 'ECE': '52.61 ± 0.52'}
+PC OlympiadBench InternLM2-Math-Plus-7B 4 {'Accuracy': '8.92 ± 0.34', 'ECE': '34.30 ± 0.56'}
+PC OlympiadBench InternLM2-Math-Plus-7B 8 {'Accuracy': '9.74 ± 0.31', 'ECE': '26.81 ± 0.32'}
+PC OlympiadBench InternLM2-Math-Plus-7B 16 {'Accuracy': '10.45 ± 0.24', 'ECE': '22.91 ± 0.29'}
+PC OlympiadBench InternLM2-Math-Plus-7B 32 {'Accuracy': '10.83 ± 0.22', 'ECE': '20.78 ± 0.24'}
+PC OlympiadBench InternLM2-Math-Plus-7B 40 {'Accuracy': '10.90 ± 0.21', 'ECE': '20.35 ± 0.11'}
+PC OlympiadBench InternLM2-Math-Plus-7B 48 {'Accuracy': '10.83 ± 0.20', 'ECE': '20.21 ± 0.19'}
+PC OlympiadBench InternLM2-Math-Plus-7B 64 {'Accuracy': '11.04 ± 0.17', 'ECE': '19.70 ± 0.19'}
+PC OlympiadBench InternLM2-Math-Plus-7B 80 {'Accuracy': '10.98 ± 0.15', 'ECE': '19.56 ± 0.22'}
+PC OlympiadBench InternLM2-Math-Plus-7B 96 {'Accuracy': '10.96 ± 0.18', 'ECE': '19.47 ± 0.22'}
+PC OlympiadBench InternLM2-Math-Plus-7B 112 {'Accuracy': '11.02 ± 0.17', 'ECE': '19.34 ± 0.23'}
+PC OlympiadBench InternLM2-Math-Plus-7B 128 {'Accuracy': '11.06 ± 0.18', 'ECE': '19.24 ± 0.22'}
+SC OlympiadBench InternLM2-Math-Plus-7B 1 {'Accuracy': '7.24 ± 0.37', 'ECE': '92.76 ± 0.37'}
+SC OlympiadBench InternLM2-Math-Plus-7B 2 {'Accuracy': '7.22 ± 0.33', 'ECE': '51.09 ± 0.50'}
+SC OlympiadBench InternLM2-Math-Plus-7B 4 {'Accuracy': '8.61 ± 0.25', 'ECE': '33.89 ± 0.41'}
+SC OlympiadBench InternLM2-Math-Plus-7B 8 {'Accuracy': '9.70 ± 0.36', 'ECE': '26.84 ± 0.26'}
+SC OlympiadBench InternLM2-Math-Plus-7B 16 {'Accuracy': '10.40 ± 0.19', 'ECE': '23.22 ± 0.29'}
+SC OlympiadBench InternLM2-Math-Plus-7B 32 {'Accuracy': '10.70 ± 0.20', 'ECE': '21.37 ± 0.23'}
+SC OlympiadBench InternLM2-Math-Plus-7B 40 {'Accuracy': '10.77 ± 0.15', 'ECE': '20.99 ± 0.09'}
+SC OlympiadBench InternLM2-Math-Plus-7B 48 {'Accuracy': '10.81 ± 0.22', 'ECE': '20.82 ± 0.22'}
+SC OlympiadBench InternLM2-Math-Plus-7B 64 {'Accuracy': '10.96 ± 0.17', 'ECE': '20.46 ± 0.15'}
+SC OlympiadBench InternLM2-Math-Plus-7B 80 {'Accuracy': '10.90 ± 0.16', 'ECE': '20.40 ± 0.20'}
+SC OlympiadBench InternLM2-Math-Plus-7B 96 {'Accuracy': '10.88 ± 0.19', 'ECE': '20.37 ± 0.19'}
+SC OlympiadBench InternLM2-Math-Plus-7B 112 {'Accuracy': '10.98 ± 0.11', 'ECE': '20.28 ± 0.13'}
+SC OlympiadBench InternLM2-Math-Plus-7B 128 {'Accuracy': '11.07 ± 0.15', 'ECE': '20.20 ± 0.16'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 1 {'Accuracy': '7.24 ± 0.37', 'ECE': '92.76 ± 0.37'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 2 {'Accuracy': '7.28 ± 0.36', 'ECE': '58.79 ± 0.55'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 4 {'Accuracy': '8.85 ± 0.30', 'ECE': '37.79 ± 0.41'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 8 {'Accuracy': '9.67 ± 0.28', 'ECE': '27.41 ± 0.26'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 16 {'Accuracy': '10.40 ± 0.20', 'ECE': '23.21 ± 0.31'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 32 {'Accuracy': '10.93 ± 0.30', 'ECE': '20.22 ± 0.46'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 40 {'Accuracy': '10.97 ± 0.23', 'ECE': '19.70 ± 0.38'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 48 {'Accuracy': '10.83 ± 0.25', 'ECE': '19.57 ± 0.19'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 80 {'Accuracy': '10.99 ± 0.26', 'ECE': '19.04 ± 0.29'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 96 {'Accuracy': '11.07 ± 0.23', 'ECE': '18.92 ± 0.25'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 112 {'Accuracy': '11.12 ± 0.10', 'ECE': '18.83 ± 0.19'}
+RPC OlympiadBench InternLM2-Math-Plus-7B 128 {'Accuracy': '11.12 ± 0.17', 'ECE': '18.87 ± 0.22'}
+
+
+Figure 2 (AIME)
+SC AIME InternLM2-Math-Plus-7B 1 {'Accuracy': '5.06 ± 0.30', 'ECE': '94.94 ± 0.30'}
+SC AIME InternLM2-Math-Plus-7B 2 {'Accuracy': '5.19 ± 0.26', 'ECE': '50.44 ± 0.57'}
+SC AIME InternLM2-Math-Plus-7B 4 {'Accuracy': '6.23 ± 0.31', 'ECE': '31.44 ± 0.33'}
+SC AIME InternLM2-Math-Plus-7B 8 {'Accuracy': '7.49 ± 0.67', 'ECE': '23.25 ± 0.69'}
+SC AIME InternLM2-Math-Plus-7B 16 {'Accuracy': '8.51 ± 0.35', 'ECE': '18.76 ± 0.40'}
+SC AIME InternLM2-Math-Plus-7B 32 {'Accuracy': '8.89 ± 0.34', 'ECE': '16.35 ± 0.46'}
+SC AIME InternLM2-Math-Plus-7B 40 {'Accuracy': '9.04 ± 0.26', 'ECE': '15.80 ± 0.33'}
+SC AIME InternLM2-Math-Plus-7B 48 {'Accuracy': '9.05 ± 0.30', 'ECE': '15.50 ± 0.33'}
+SC AIME InternLM2-Math-Plus-7B 64 {'Accuracy': '9.24 ± 0.21', 'ECE': '14.98 ± 0.25'}
+SC AIME InternLM2-Math-Plus-7B 80 {'Accuracy': '9.33 ± 0.22', 'ECE': '14.71 ± 0.26'}
+SC AIME InternLM2-Math-Plus-7B 96 {'Accuracy': '9.31 ± 0.12', 'ECE': '14.62 ± 0.14'}
+SC AIME InternLM2-Math-Plus-7B 112 {'Accuracy': '9.39 ± 0.21', 'ECE': '14.44 ± 0.22'}
+SC AIME InternLM2-Math-Plus-7B 128 {'Accuracy': '9.40 ± 0.21', 'ECE': '14.35 ± 0.23'}
+PC AIME InternLM2-Math-Plus-7B 1 {'Accuracy': '5.06 ± 0.30', 'ECE': '94.94 ± 0.30'}
+PC AIME InternLM2-Math-Plus-7B 2 {'Accuracy': '5.66 ± 0.54', 'ECE': '51.57 ± 0.84'}
+PC AIME InternLM2-Math-Plus-7B 4 {'Accuracy': '6.60 ± 0.33', 'ECE': '31.98 ± 0.32'}
+PC AIME InternLM2-Math-Plus-7B 8 {'Accuracy': '7.80 ± 0.62', 'ECE': '23.22 ± 0.70'}
+PC AIME InternLM2-Math-Plus-7B 16 {'Accuracy': '8.76 ± 0.49', 'ECE': '18.58 ± 0.49'}
+PC AIME InternLM2-Math-Plus-7B 32 {'Accuracy': '9.04 ± 0.41', 'ECE': '16.20 ± 0.50'}
+PC AIME InternLM2-Math-Plus-7B 40 {'Accuracy': '9.22 ± 0.37', 'ECE': '15.62 ± 0.41'}
+PC AIME InternLM2-Math-Plus-7B 48 {'Accuracy': '9.20 ± 0.43', 'ECE': '15.33 ± 0.46'}
+PC AIME InternLM2-Math-Plus-7B 64 {'Accuracy': '9.40 ± 0.24', 'ECE': '14.79 ± 0.27'}
+PC AIME InternLM2-Math-Plus-7B 80 {'Accuracy': '9.42 ± 0.18', 'ECE': '14.56 ± 0.19'}
+PC AIME InternLM2-Math-Plus-7B 96 {'Accuracy': '9.43 ± 0.17', 'ECE': '14.45 ± 0.19'}
+PC AIME InternLM2-Math-Plus-7B 112 {'Accuracy': '9.56 ± 0.22', 'ECE': '14.22 ± 0.25'}
+PC AIME InternLM2-Math-Plus-7B 128 {'Accuracy': '9.45 ± 0.23', 'ECE': '14.25 ± 0.25'}
+PPL AIME InternLM2-Math-Plus-7B 1 {'Accuracy': '5.06 ± 0.30', 'ECE': '80.99 ± 0.29'}
+PPL AIME InternLM2-Math-Plus-7B 2 {'Accuracy': '5.66 ± 0.54', 'ECE': '83.38 ± 0.58'}
+PPL AIME InternLM2-Math-Plus-7B 4 {'Accuracy': '5.93 ± 0.35', 'ECE': '84.92 ± 0.36'}
+PPL AIME InternLM2-Math-Plus-7B 8 {'Accuracy': '6.14 ± 0.48', 'ECE': '85.97 ± 0.48'}
+PPL AIME InternLM2-Math-Plus-7B 16 {'Accuracy': '6.21 ± 0.72', 'ECE': '86.82 ± 0.70'}
+PPL AIME InternLM2-Math-Plus-7B 32 {'Accuracy': '6.31 ± 0.60', 'ECE': '87.43 ± 0.59'}
+PPL AIME InternLM2-Math-Plus-7B 40 {'Accuracy': '6.21 ± 0.72', 'ECE': '87.75 ± 0.72'}
+PPL AIME InternLM2-Math-Plus-7B 48 {'Accuracy': '6.37 ± 0.69', 'ECE': '87.76 ± 0.70'}
+PPL AIME InternLM2-Math-Plus-7B 64 {'Accuracy': '6.48 ± 0.43', 'ECE': '87.91 ± 0.44'}
+PPL AIME InternLM2-Math-Plus-7B 80 {'Accuracy': '6.41 ± 0.49', 'ECE': '88.16 ± 0.49'}
+PPL AIME InternLM2-Math-Plus-7B 96 {'Accuracy': '6.28 ± 0.43', 'ECE': '88.44 ± 0.43'}
+PPL AIME InternLM2-Math-Plus-7B 112 {'Accuracy': '6.11 ± 0.44', 'ECE': '88.73 ± 0.44'}
+PPL AIME InternLM2-Math-Plus-7B 128 {'Accuracy': '5.96 ± 0.48', 'ECE': '88.98 ± 0.49'}
+RPC AIME InternLM2-Math-Plus-7B 1 {'Accuracy': '5.06 ± 0.30', 'ECE': '94.94 ± 0.30'}
+RPC AIME InternLM2-Math-Plus-7B 2 {'Accuracy': '5.66 ± 0.54', 'ECE': '58.09 ± 0.81'}
+RPC AIME InternLM2-Math-Plus-7B 4 {'Accuracy': '6.55 ± 0.36', 'ECE': '34.99 ± 0.34'}
+RPC AIME InternLM2-Math-Plus-7B 8 {'Accuracy': '7.86 ± 0.70', 'ECE': '23.66 ± 0.81'}
+RPC AIME InternLM2-Math-Plus-7B 16 {'Accuracy': '8.71 ± 0.44', 'ECE': '19.03 ± 0.53'}
+RPC AIME InternLM2-Math-Plus-7B 32 {'Accuracy': '9.08 ± 0.35', 'ECE': '16.59 ± 0.37'}
+RPC AIME InternLM2-Math-Plus-7B 40 {'Accuracy': '9.37 ± 0.44', 'ECE': '15.90 ± 0.40'}
+RPC AIME InternLM2-Math-Plus-7B 48 {'Accuracy': '9.50 ± 0.45', 'ECE': '15.53 ± 0.44'}
+RPC AIME InternLM2-Math-Plus-7B 64 {'Accuracy': '9.53 ± 0.34', 'ECE': '15.11 ± 0.30'}
+RPC AIME InternLM2-Math-Plus-7B 80 {'Accuracy': '9.69 ± 0.37', 'ECE': '14.69 ± 0.42'}
+RPC AIME InternLM2-Math-Plus-7B 96 {'Accuracy': '9.87 ± 0.22', 'ECE': '14.38 ± 0.21'}
+RPC AIME InternLM2-Math-Plus-7B 112 {'Accuracy': '9.69 ± 0.11', 'ECE': '14.45 ± 0.12'}
+RPC AIME InternLM2-Math-Plus-7B 128 {'Accuracy': '9.74 ± 0.23', 'ECE': '14.31 ± 0.21'}
+

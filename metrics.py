@@ -113,3 +113,33 @@ def compute_average_metrics(predicts, n_bins=10):
     nll = np.mean(negative_ll)
 
     return (ece, bs, nll), (acc, cnf, siz)
+
+
+def format_reliability_bins(max_bins, n_bins=10):
+    """
+    Format (acc, cnf, siz) from compute_maximum_metrics into reliability diagram data.
+    Returns a list of dicts: bin_low, bin_high, avg_confidence, accuracy_pct, gap_pct, count.
+    """
+    acc, cnf, siz = max_bins
+    rows = []
+    for cur in range(n_bins):
+        lower = cur / n_bins
+        upper = (cur + 1) / n_bins
+        count = float(siz[cur])
+        if count > 0:
+            avg_cnf = float(cnf[cur])
+            acc_pct = float(acc[cur]) * 100.0
+            gap_pct = (avg_cnf - acc[cur]) * 100.0
+        else:
+            avg_cnf = (lower + upper) / 2.0
+            acc_pct = 0.0
+            gap_pct = 0.0
+        rows.append({
+            "bin_low": lower,
+            "bin_high": upper,
+            "avg_confidence": avg_cnf,
+            "accuracy_pct": acc_pct,
+            "gap_pct": gap_pct,
+            "count": count,
+        })
+    return rows

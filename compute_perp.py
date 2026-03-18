@@ -150,22 +150,26 @@ class Evaluator:
     def worker(self, args):
         json_file, cache_file, K, seed = args
         acc, maximum, average, max_bins, avg_bins = self.process(
-            json_file=json_file, 
+            json_file=json_file,
             cache_file=cache_file,
-            equal_func=numberic_compare, 
+            equal_func=numberic_compare,
             evaluator=prep_evaluator,
-            K=K, 
+            K=K,
             seed=seed
         )
-        return acc, maximum, average
+        return acc, maximum, average, max_bins, avg_bins
 
-    def solve(self, json_file, cache_file=None, repeats=10, K=128):
+    def solve(self, json_file, cache_file=None, repeats=10, K=128, output_reliability=False):
         accs, maxs, avgs = [], [], []
+        max_bins_ref = None
         with multiprocessing.Pool() as pool:
             results = pool.map(self.worker, [(json_file, cache_file, K, seed) for seed in range(repeats)])
-        accs, maxs, _ = zip(*results)
+        accs, maxs, _, max_bins_ref, _ = zip(*results)
         accs, maxs = np.array(accs), np.array(maxs)
-        return {
+        out = {
             "Accuracy": f"{accs.mean():.2f} ± {accs.std():.2f}",
             "ECE": f"{maxs[:, 0].mean() * 100.0:.2f} ± {maxs[:, 0].std() * 100.0:.2f}",
         }
+        if output_reliability and max_bins_ref is not None and max_bins_ref[0] is not None:
+            out["reliability"] = metrics.format_reliability_bins(max_bins_ref[0])
+        return out

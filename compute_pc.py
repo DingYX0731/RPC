@@ -62,12 +62,12 @@ class PCEvaluator(Evaluator):
     def worker(self, args):
         json_file, cache_file, K, seed = args
         acc, maximum, average, max_bins, avg_bins = self.process(
-            json_file=json_file, 
+            json_file=json_file,
             cache_file=cache_file,
-            equal_func=numberic_compare, 
+            equal_func=numberic_compare,
             evaluator=pc_evaluator,
-            K=K, 
+            K=K,
             seed=seed
         )
-        return acc, maximum, average
+        return acc, maximum, average, max_bins, avg_bins
 
